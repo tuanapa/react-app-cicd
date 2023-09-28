@@ -8,7 +8,7 @@ on:
     branches:
       - main
 jobs:
-  my_job:
+  build:
     name: deploy to staging
     runs-on: ubuntu-latest
     strategy:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          
+
       - name: Install dependencies and build
         run: npm run ci-build
 
